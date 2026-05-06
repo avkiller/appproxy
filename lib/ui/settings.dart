@@ -26,7 +26,7 @@ class _AppSettingsState extends State<AppSettings> {
   bool _isSwitchZh = true;
   bool _isEnableDarkMode = false;
   bool _isMcpServer = false;
-  bool _isCheckUpdate = true;
+  bool _isCheckUpdate = false;
   bool _isCheckWifi = true;
   final portController = TextEditingController();
   final passController = TextEditingController();
@@ -42,7 +42,7 @@ class _AppSettingsState extends State<AppSettings> {
     // 初始化设置数据
     _isSwitchZh = await AppSetings.getCnOrEn();
     _isEnableDarkMode = await AppSetings.getEnableDarkMode();
-    _isCheckUpdate = await AppSetings.getCheckUpdate();
+    _isCheckUpdate = false
     _isCheckWifi = await AppSetings.getCheckWifi();
     _isMcpServer = await AppSetings.getMcpServer();
     mcpPort = await AppSetings.getMcpPort();
