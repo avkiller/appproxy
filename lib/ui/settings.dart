@@ -398,7 +398,7 @@ class _AppSettingsState extends State<AppSettings> {
                         const Text('github:'),
                         TextButton(
                             onPressed: () {
-                              _launchUrl('https://github.com/ys1231/appproxy');
+                              _launchUrl('https://github.com/avkiller/appproxy');
                             },
                             child: const Text('appproxy')),
                       ],
@@ -429,7 +429,7 @@ void showUpdateDialog(BuildContext context, String version, String arch,
   // 获取版本信息
   String appproxyUpdateUrl = url != ""
       ? url
-      : "https://pfile.ys1231.cn/modules/appproxy/appproxy.json";
+      :"";
   // 使用dio获取版本信息
   String versionName = "0";
   String modifyContent = "";
@@ -459,7 +459,7 @@ void showUpdateDialog(BuildContext context, String version, String arch,
     if (retryCount < maxRetry) {
       retryCount++;
       appproxyUpdateUrl =
-          "https://api.github.com/repos/ys1231/appproxy/releases/latest";
+          "";
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(S.of(context).text_get_version_info_fail)));
       showUpdateDialog(context, version, arch,
